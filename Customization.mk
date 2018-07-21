@@ -25,6 +25,7 @@ TW_MAX_BRIGHTNESS  := 4095
 TW_DEFAULT_BRIGHTNESS := 2047
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
+TW_USE_TOOLBOX := true
 
 # TWRP: Blacklist virtual mouse
 TW_INPUT_BLACKLIST := "hbtp_vm"
