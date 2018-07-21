@@ -32,6 +32,9 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 
 # TWRP: FileSystem support
 TW_INCLUDE_EXFAT   := true
+TW_FLASH_FROM_STORAGE := true
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 
 # TWRP: Encryption
 TW_INCLUDE_CRYPTO := true
@@ -43,3 +46,23 @@ TW_NO_SCREEN_BLANK := true
 
 # init
 TW_EXCLUDE_DEFAULT_USB_INIT := true
+TARGET_RECOVERY_INITRC := device/sony/customization/init.twrp.rc
+
+ifneq ($(filter loire,$(PRODUCT_PLATFORM)),)
+TARGET_RECOVERY_FSTAB := device/sony/customization/trwp_loire.fstab
+endif
+
+ifneq ($(filter tone,$(PRODUCT_PLATFORM)),)
+TARGET_RECOVERY_FSTAB := device/sony/customization/trwp_tone.fstab
+endif
+
+ifneq ($(filter nile,$(PRODUCT_PLATFORM)),)
+TARGET_RECOVERY_FSTAB := device/sony/customization/trwp_nile.fstab
+endif
+
+ifneq ($(filter yoshino,$(PRODUCT_PLATFORM)),)
+TARGET_RECOVERY_FSTAB := device/sony/customization/trwp_yoshino.fstab
+endif
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/sony/customization/sepolicy
