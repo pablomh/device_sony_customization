@@ -42,3 +42,8 @@ TW_THEME := portrait_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TW_NO_SCREEN_BLANK := true
 
+# Exclude MTP for Tama platform, currently broken on TWRP
+ifneq (,$(filter tama, $(PRODUCT_PLATFORM)))
+TW_EXCLUDE_MTP := true
+endif
+
