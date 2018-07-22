@@ -49,24 +49,53 @@ TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_RECOVERY_INITRC := device/sony/customization/cust_twrp/init.twrp.rc
 
-ifneq ($(filter loire,$(PRODUCT_PLATFORM)),)
+ifneq ($(filter loire,$(SOMC_PLATFORM)),)
 TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/trwp_loire.fstab
 endif
 
-ifneq ($(filter tone,$(PRODUCT_PLATFORM)),)
+ifneq ($(filter tone,$(SOMC_PLATFORM)),)
 TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/trwp_tone.fstab
 endif
 
-ifneq ($(filter nile,$(PRODUCT_PLATFORM)),)
+ifneq ($(filter nile,$(SOMC_PLATFORM)),)
 TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/trwp_nile.fstab
 endif
 
-ifneq ($(filter yoshino,$(PRODUCT_PLATFORM)),)
+ifneq ($(filter yoshino,$(SOMC_PLATFORM)),)
 TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/trwp_yoshino.fstab
 endif
 
+ifneq ($(filter tama,$(SOMC_PLATFORM)),)
+TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/twrp_tama.fstab
+endif
+
+# Debug: Print TWRP fstab path for inclusion bug verification
+#$(warning CustomizationTWRP: Using fstab $(TARGET_RECOVERY_FSTAB) for TWRP Recovery)
+
 # Install kernel modules to root directory
 NEED_KERNEL_MODULE_ROOT := true
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+      libEGL \
+      libGLESv2 \
+      android.hardware.graphics.allocator@2.0 \
+      android.hardware.graphics.common@1.0 \
+      android.hardware.graphics.mapper@2.0 \
+      android.hardware.configstore@1.0 \
+      android.hardware.configstore-utils \
+      android.hardware.graphics.bufferqueue@1.0 \
+      android.hardware.media@1.0 \
+      android.hidl.token@1.0 \
+      android.hidl.token@1.0-utils \
+      libbinder \
+      libgui \
+      libnativebridge \
+      libnativehelper \
+      libnativeloader \
+      libnativewindow \
+      libprotobuf-cpp-lite \
+      libsync \
+      libui
 
 # Dependencies of libsecureui.so
 TARGET_RECOVERY_DEVICE_MODULES += \
