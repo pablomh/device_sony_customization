@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := init.recovery.$(TARGET_DEVICE)
+LOCAL_MODULE := init.customization.recovery.$(TARGET_DEVICE)
 LOCAL_SRC_FILES := init.recovery.common.rc
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_STEM := init.recovery.$(TARGET_DEVICE)
