@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+WITH_TWRP := true
 
 # TWRP Recovery common configuration
 RECOVERY_SDCARD_ON_DATA := true
@@ -144,5 +145,5 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/android.hardware.boot
 TARGET_RECOVERY_DEVICE_MODULES      += strace
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(OUT)/system/xbin/strace
 
-PRODUCT_COPY_FILES += \
-    device/sony/customization/cust_twrp/init.twrp.rc:root/init.twrp.rc
+PRODUCT_PACKAGES += \
+      init.recovery.usb
