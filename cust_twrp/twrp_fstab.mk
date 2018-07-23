@@ -13,27 +13,33 @@
 # limitations under the License.
 
 ifneq ($(filter loire,$(SOMC_PLATFORM)),)
-TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_loire.fstab
+PRODUCT_COPY_FILES += \
+    device/sony/customization/cust_twrp/fstab/twrp_loire.fstab:recovery/root/etc/twrp_loire.fstab
 endif
 
 ifneq ($(filter tone,$(SOMC_PLATFORM)),)
-TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_tone.fstab
+PRODUCT_COPY_FILES += \
+    device/sony/customization/cust_twrp/fstab/twrp_tone.fstab:recovery/root/etc/twrp_tone.fstab
 endif
 
 ifneq ($(filter nile,$(SOMC_PLATFORM)),)
-TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_nile.fstab
+PRODUCT_COPY_FILES += \
+    device/sony/customization/cust_twrp/fstab/twrp_nile.fstab:recovery/root/etc/twrp_nile.fstab
 endif
 
 ifneq ($(filter aosp_g81%,$(TARGET_PRODUCT)),)
-TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_yoshino.fstab
+PRODUCT_COPY_FILES += \
+    device/sony/customization/cust_twrp/fstab/twrp_yoshino.fstab:recovery/root/etc/twrp_yoshino.fstab
 endif
 
 ifneq ($(filter aosp_g83% aosp_g8441,$(TARGET_PRODUCT)),)
-TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_yoshinor2.fstab
+PRODUCT_COPY_FILES += \
+    device/sony/customization/cust_twrp/fstab/twrp_yoshinor2.fstab:recovery/root/etc/twrp_yoshinor2.fstab
 endif
 
 ifneq ($(filter tama,$(SOMC_PLATFORM)),)
-TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_tama.fstab
+PRODUCT_COPY_FILES += \
+    device/sony/customization/cust_twrp/fstab/twrp_tama.fstab:recovery/root/etc/twrp_tama.fstab
 endif
 
 # Debug: Print TWRP fstab path for inclusion bug verification
