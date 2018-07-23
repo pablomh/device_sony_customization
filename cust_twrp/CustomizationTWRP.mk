@@ -71,6 +71,13 @@ endif
 # Debug: Print TWRP fstab path for inclusion bug verification
 #$(warning CustomizationTWRP: Using fstab $(TARGET_RECOVERY_FSTAB) for TWRP Recovery)
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.$(TARGET_BOARD_PLATFORM) \
+    libgptutils \
+    libz
+endif
+
 # Dependencies of libsecureui.so
 TARGET_RECOVERY_DEVICE_MODULES += \
       libEGL \
