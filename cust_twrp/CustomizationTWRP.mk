@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-WITH_TWRP := true
-
 # TWRP Recovery common configuration
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -58,5 +56,7 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libz
 endif
 
+# Note: This will override init.recovery.DEVICE.rc
 PRODUCT_PACKAGES += \
-      init.recovery.usb
+      init.recovery.usb \
+      init.customization.recovery.$(TARGET_DEVICE)
