@@ -36,6 +36,8 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 # TWRP: Encryption with FBE
 TW_INCLUDE_CRYPTO     := true
 TW_INCLUDE_CRYPTO_FBE := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := true
 
 # TWRP: These properties may change on a per-device basis
 TW_THEME := portrait_hdpi
