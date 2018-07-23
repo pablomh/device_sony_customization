@@ -24,8 +24,12 @@ ifneq ($(filter nile,$(SOMC_PLATFORM)),)
     TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_nile.fstab
 endif
 
-ifneq ($(filter yoshino,$(SOMC_PLATFORM)),)
+ifneq ($(filter aosp_g81%,$(TARGET_PRODUCT)),)
     TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_yoshino.fstab
+endif
+
+ifneq ($(filter aosp_g83% aosp_g8441,$(TARGET_PRODUCT)),)
+    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_yoshinor2.fstab
 endif
 
 ifneq ($(filter tama,$(SOMC_PLATFORM)),)
