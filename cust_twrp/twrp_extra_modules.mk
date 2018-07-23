@@ -96,3 +96,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so:recovery/root/$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so \
     $(LOCAL_PATH)/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so:recovery/root/$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so \
     $(LOCAL_PATH)/vendor/lib64/libQSEEComAPI.so:recovery/root/$(TARGET_COPY_OUT_VENDOR)/lib64/libQSEEComAPI.so
+
+# USB
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.recovery.custom.rc:root/init.recovery.custom.rc

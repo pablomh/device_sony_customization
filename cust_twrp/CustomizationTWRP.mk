@@ -55,8 +55,3 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libgptutils \
     libz
 endif
-
-# Note: This will override init.recovery.DEVICE.rc
-PRODUCT_PACKAGES += \
-    init.recovery.usb \
-    init.customization.recovery.$(TARGET_DEVICE)
