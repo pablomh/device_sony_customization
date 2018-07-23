@@ -13,23 +13,23 @@
 # limitations under the License.
 
 ifneq ($(filter loire,$(SOMC_PLATFORM)),)
-    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/twrp_loire.fstab
+    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_loire.fstab
 endif
 
 ifneq ($(filter tone,$(SOMC_PLATFORM)),)
-    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/twrp_tone.fstab
+    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_tone.fstab
 endif
 
 ifneq ($(filter nile,$(SOMC_PLATFORM)),)
-    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/twrp_nile.fstab
+    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_nile.fstab
 endif
 
 ifneq ($(filter yoshino,$(SOMC_PLATFORM)),)
-    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/twrp_yoshino.fstab
+    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_yoshino.fstab
 endif
 
 ifneq ($(filter tama,$(SOMC_PLATFORM)),)
-    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/twrp_tama.fstab
+    TARGET_RECOVERY_FSTAB := device/sony/customization/cust_twrp/fstab/twrp_tama.fstab
 endif
 
 # Debug: Print TWRP fstab path for inclusion bug verification
