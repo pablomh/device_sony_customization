@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := device/sony/customization/cust_twrp
+
 # Dependencies of libsecureui.so
 TARGET_RECOVERY_DEVICE_MODULES += \
     libEGL \
@@ -84,3 +86,13 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/android.hardware.boot
 # Add strace
 TARGET_RECOVERY_DEVICE_MODULES      += strace
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(OUT)/system/xbin/strace
+
+# Qseecom dependencies
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sbin/android.hardware.gatekeeper@1.0-service-qti:recovery/root/sbin/android.hardware.gatekeeper@1.0-service-qti \
+    $(LOCAL_PATH)/sbin/android.hardware.keymaster@3.0-service-qti:recovery/root/sbin/android.hardware.keymaster@3.0-service-qti \
+    $(LOCAL_PATH)/sbin/qseecomd:recovery/root/sbin/qseecomd \
+    $(LOCAL_PATH)/vendor/manifest.xml:recovery/root/$(TARGET_COPY_OUT_VENDOR)/manifest.xml \
+    $(LOCAL_PATH)/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so:recovery/root/$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so \
+    $(LOCAL_PATH)/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so:recovery/root/$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so \
+    $(LOCAL_PATH)/vendor/lib64/libQSEEComAPI.so:recovery/root/$(TARGET_COPY_OUT_VENDOR)/lib64/libQSEEComAPI.so
