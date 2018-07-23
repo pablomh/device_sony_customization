@@ -58,5 +58,5 @@ endif
 
 # Note: This will override init.recovery.DEVICE.rc
 PRODUCT_PACKAGES += \
-      init.recovery.usb \
+      init.recovery.usb.rc \
       init.customization.recovery.$(TARGET_DEVICE)
