@@ -70,9 +70,6 @@ endif
 # Debug: Print TWRP fstab path for inclusion bug verification
 #$(warning CustomizationTWRP: Using fstab $(TARGET_RECOVERY_FSTAB) for TWRP Recovery)
 
-# Install kernel modules to root directory
-NEED_KERNEL_MODULE_ROOT := true
-
 # Dependencies of libsecureui.so
 TARGET_RECOVERY_DEVICE_MODULES += \
       libEGL \
@@ -148,5 +145,4 @@ TARGET_RECOVERY_DEVICE_MODULES      += strace
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(OUT)/system/xbin/strace
 
 PRODUCT_COPY_FILES += \
-    device/sony/customization/cust_twrp/manifest.xml:recovery/root/vendor/manifest.xml \
     device/sony/customization/cust_twrp/init.twrp.rc:root/init.twrp.rc
